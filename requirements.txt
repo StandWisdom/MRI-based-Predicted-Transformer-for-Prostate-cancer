@@ -1,0 +1,9 @@
+torch==2.0.1+cu117
+scikit-learn==0.21.3
+vit-pytorch==1.2.2
+tqdm==4.66.1
+einops==0.6.1
+byol-pytorch==0.6.0
+SimpleITK==2.2.1
+opencv-contrib-python==4.10.0
+torchio==0.18.91
