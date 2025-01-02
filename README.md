@@ -21,3 +21,6 @@ Using environment.yml
 Activate the Conda environment
 - Activate the newly created Conda environment:
 `conda activate my_python_env`
+
+## Prepare your data for generator-net:
+The training list was essential for the Framework.
