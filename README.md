@@ -7,11 +7,14 @@ The goal of this repository is:
 - to provide pre-trained foundation model of prostate mp-MRI for migration of downstream tasks in prostate cancer.
 
 ## Installation
+Using requirements.txt
+Install the required Python packages using pip:
+pip install -r requirements.txt
 
-1. [python3 with anaconda](https://www.continuum.io/downloads)
-2. [pytorch with/out CUDA](http://pytorch.org)
-3. `pip install pandas`
-4. `pip install vit-pytorch`
-5. `pip install einops`
-6. `pip install tqdm`
-7. `pip install byol-pytorch`
+Using environment.yml
+Create a Conda environment with the specified dependencies:
+conda env create -f environment.yml
+
+Activate the Conda environment
+Activate the newly created Conda environment:
+conda activate my_python_env
