@@ -8,13 +8,13 @@ The goal of this repository is:
 
 ## Installation
 Using requirements.txt
-Install the required Python packages using pip:
-pip install -r requirements.txt
+- Install the required Python packages using pip:
+- pip install -r requirements.txt
 
 Using environment.yml
-Create a Conda environment with the specified dependencies:
-conda env create -f environment.yml
+- Create a Conda environment with the specified dependencies:
+- conda env create -f environment.yml
 
 Activate the Conda environment
-Activate the newly created Conda environment:
-conda activate my_python_env
+- Activate the newly created Conda environment:
+- conda activate my_python_env
