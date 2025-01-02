@@ -1,0 +1,21 @@
+name: python_env
+channels:
+  - defaults
+  - conda-forge
+  - nvidia
+dependencies:
+  - python=3.10.9
+  - pip
+  - cudatoolkit=11.7
+  - pytorch=2.0.1
+  - torchvision
+  - torchaudio
+  - scikit-learn=0.21.3
+  - tqdm=4.66.1
+  - einops=0.6.1
+  - SimpleITK=2.2.1
+  - opencv-contrib-python=4.10.0
+  - pip:
+      - vit-pytorch==1.2.2
+      - byol-pytorch==0.6.0
+      - torchio==0.18.91
