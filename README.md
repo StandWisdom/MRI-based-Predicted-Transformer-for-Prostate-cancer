@@ -8,9 +8,16 @@ The goal of this repository is:
 
 ## What is MRI-PTPCa?
 MRI-PTPCa is an artificial intellgence tools with mp-MRI to achieve non-invasive pathological prediction of prostate cancer, and then realize auxiliary diagnosis and grading in clinics. (It can be used as an independent system, a parallel system or a red flag system, which depends on the trust, ethics and laws and regulations of AI.)
-![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/study%20design.tif)<br>
+![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/study%20design.png)<br>
 
-## Installation
+## What can we do with MRI-PTPCa?
+You can embed MRI-PTPCa into all aspects of clinical diagnosis and treatment of prostate cancer, including: reducing the false positive rate of PSA screening, reducing the intra-observer variability of imaging evaluation, reducing overdiagnosis of CSPCa, reducing the risk of up- and down-regulation of biopsy, and providing a reliable pathological prediction tool for long-term clinical follow-up, etc.
+![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/clinical%20benifits.png)<br>
+
+## How to build an MRI-PTPCa model and use it?
+
+
+### Installation
 1. [python3 with anaconda](https://www.continuum.io/downloads)
 2. [pytorch with/out CUDA](http://pytorch.org)
 
@@ -26,39 +33,39 @@ Activate the Conda environment
 - Activate the newly created Conda environment:
 `conda activate my_python_env`
 
-## **Overview**
+### **Overview**
 This repository provides an implementation of the MRI-based Predicted Transformer for Prostate Cancer (MRI-PTPCa). The code includes the full pipeline for data preparation, model training, testing, and statistical analysis. Below is a step-by-step guide to help users run the project.
 
 
-## **Key Highlights**
+### **Key Highlights**
 
 We recommend using **Jupyter Notebook** to run the code. To facilitate sharing and secondary development, we have minimized the coupling between different steps, making the code more flexible and easier to understand.
 
 
-## **Step 1: Data Preparation**
+### **Step 1: Data Preparation**
 
-### 1) **Image File Format Conversion**
+#### 1) **Image File Format Conversion**
    - Run the `dcm2nii` function in `prepare_datasets/dcm2nrrd_MRI`.
    - This function organizes multiple unmarked `.dcm` MRI files into single `.nii` or `.nii.gz` files by sequence name.
 
-### 2) **Generating Image Sequence Lists**
+#### 2) **Generating Image Sequence Lists**
    - Run the `gen_dataset_list` function in `prepare_datasets/dcm2nrrd_MRI`.
    - This step associates `.nii` files with patient IDs and generates a dataset list.
    - For better understanding, we provide a sample in `data/PICAI-seq_list.xlsx`.
 
-### 3) **Associating Clinical Information**
+#### 3) **Associating Clinical Information**
    - Use patient IDs to associate clinical information, such as Gleason scores, to pair mp-MRI data with labels.
    - A sample file is provided in `data/PICAI_clinicInfo.xlsx`.
 
 
-## **Step 2: Data Loading**
+### **Step 2: Data Loading**
 
 - The `loaddata/dataset2.py` file provides the data I/O interface required for model training and testing.
 - Run the script directly (`python dataset2.py`) to display the data and label information loaded during each iteration.
 - Dataloader I/O: T2WI, ADC, DWI with high B values, and labels.
 - Missing sequences are replaced with matrices of all-zero values of the same dimensions.
 
-## **Step 3: Contrastive Learning Training (MRI-BYOL Network)**
+### **Step 3: Contrastive Learning Training (MRI-BYOL Network)**
 
 - The `/contrastive_learning/MRIBYOL.py` file provides an example of contrastive learning to handle missing sequences.
 - During training, either the ADC or DWI sequence is randomly disabled in the input.
@@ -66,22 +73,22 @@ We recommend using **Jupyter Notebook** to run the code. To facilitate sharing a
 - The data I/O interface for training uses the `generate_img_batch_BYOL` function from `loaddata/dataset1.py`.
 - The first stage of contrastive learning follows the classic BYOL framework, where paired data is prepared by randomly masking image content.
 
-## **Step 4: Training the Tumor Aggressiveness Prediction Model (MIMSViT)**
+### **Step 4: Training the Tumor Aggressiveness Prediction Model (MIMSViT)**
 
 - We provide examples for training:
   - Single-sequence T2WI: `/supervised_learning/MIMSViT_t2wi.py`
   - Multi-parametric MRI (mp-MRI): `/supervised_learning/MIMSViT_mpMRI.py`
 
-## **Step 5: Testing and Evaluation**
+### **Step 5: Testing and Evaluation**
 
-### 1) **Model Testing**
+#### 1) **Model Testing**
    - The `evaluate/evaluate(mp-MRI).py` script provides an example of model testing.
    - Prediction results are saved in `.xlsx` format.
 
-### 2) **Post-processing**
+#### 2) **Post-processing**
    - The `evaluate/distribute.py` script converts multi-class prediction results into scores linearly correlated with tumor aggressiveness.
 
-## **Step 6: Visualization and Statistical Analysis**
+### **Step 6: Visualization and Statistical Analysis**
 
 - The `Statistics` folder contains scripts for generating the following:
   - ROC curves
