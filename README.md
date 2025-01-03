@@ -16,7 +16,7 @@ You can embed MRI-PTPCa into all aspects of clinical diagnosis and treatment of 
 
 ## How to build an MRI-PTPCa model and use it?
 You need a computer with GPU computing equipment, which can be either a graphics workstation or a personal computer. If you want to retrain your own model, a more powerful GPU is recommended. Windows or Linux systems are suitable, which users only need to pay attention to the slight differences in file paths and dependent environments. MRI-PTPCa requires a pre-trained feature extraction network and a prediction network based on information fusion. Better feature extractors will bring more robustness to model performance. Therefore, the basic model under contrastive learning needs to be considered. We provide a flexible API for easy grafting and secondary development in our code. The model training process and network architecture can be referred to the following figure.
-
+![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/workflow.png)<br>
 
 ### Installation
 1. [python3 with anaconda](https://www.continuum.io/downloads)
