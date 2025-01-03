@@ -1,10 +1,14 @@
-# MRI-based-Predicted-Transformer-for-Prostate-cancer
+# MRI-based-Predicted-Transformer-for-Prostate-cancer (MRI-PTPCa)
 An MRI-pathology model (MRI-based Predicted Transformer for Prostate cancer (MRI-PTPCa)) was proposed to discover correlations between mp-MRI and tumor regressiveness of PCa and was further deployed for diagnosing non-PCa, PCa, non-CSPCa, CSPCa, and grading of GGG.
 
 The goal of this repository is:
 - to help researchers to reproduce the MRI-PTPCa  and expand for other prostate research or relevant research.
 - to help researchers to build a end-to-end AI model alone to predicting pathological prostate tumour aggressiveness for assisted non-invasive assessment.
 - to provide pre-trained foundation model of prostate mp-MRI for migration of downstream tasks in prostate cancer.
+
+## What is MRI-PTPCa?
+MRI-PTPCa is an artificial intellgence tools with mp-MRI to achieve non-invasive pathological prediction of prostate cancer, and then realize auxiliary diagnosis and grading in clinics. (It can be used as an independent system, a parallel system or a red flag system, which depends on the trust, ethics and laws and regulations of AI.)
+![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/study%20design.tif)<br>
 
 ## Installation
 1. [python3 with anaconda](https://www.continuum.io/downloads)
@@ -21,8 +25,6 @@ Using environment.yml
 Activate the Conda environment
 - Activate the newly created Conda environment:
 `conda activate my_python_env`
-
-# MRI-based Predicted Transformer for Prostate Cancer
 
 ## **Overview**
 This repository provides an implementation of the MRI-based Predicted Transformer for Prostate Cancer (MRI-PTPCa). The code includes the full pipeline for data preparation, model training, testing, and statistical analysis. Below is a step-by-step guide to help users run the project.
