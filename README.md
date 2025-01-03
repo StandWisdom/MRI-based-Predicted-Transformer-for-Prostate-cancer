@@ -15,6 +15,7 @@ You can embed MRI-PTPCa into all aspects of clinical diagnosis and treatment of 
 ![orig](https://github.com/StandWisdom/MRI-based-Predicted-Transformer-for-Prostate-cancer/blob/main/data/clinical%20benifits.png)<br>
 
 ## How to build an MRI-PTPCa model and use it?
+You need a computer with GPU computing equipment, which can be either a graphics workstation or a personal computer. If you want to retrain your own model, a more powerful GPU is recommended. Windows or Linux systems are suitable, which users only need to pay attention to the slight differences in file paths and dependent environments. MRI-PTPCa requires a pre-trained feature extraction network and a prediction network based on information fusion. Better feature extractors will bring more robustness to model performance. Therefore, the basic model under contrastive learning needs to be considered. We provide a flexible API for easy grafting and secondary development in our code. The model training process and network architecture can be referred to the following figure.
 
 
 ### Installation
@@ -57,7 +58,6 @@ We recommend using **Jupyter Notebook** to run the code. To facilitate sharing a
    - Use patient IDs to associate clinical information, such as Gleason scores, to pair mp-MRI data with labels.
    - A sample file is provided in `data/PICAI_clinicInfo.xlsx`.
 
-
 ### **Step 2: Data Loading**
 
 - The `loaddata/dataset2.py` file provides the data I/O interface required for model training and testing.
@@ -97,3 +97,6 @@ We recommend using **Jupyter Notebook** to run the code. To facilitate sharing a
   - NRI-IDI curves
 
 ---
+## Acknowledgement
+Thanks to the https://github.com/lucidrains/byol-pytorch for BYOL implement.<br>
+Thanks to the https://github.com/lucidrains/vit-pytorch for ViT backbone implement.<br>
