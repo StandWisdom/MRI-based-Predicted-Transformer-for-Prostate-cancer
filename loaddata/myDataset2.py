@@ -192,6 +192,8 @@ class DataSet():
         df_label = pd.DataFrame(L,columns=['ID',key])
         if df_label.shape[0]<=0:
             print('Label convert error.')
+
+        # NB and RP hybrid learning can increase the proportion of RP samples by resampling with replacement
         return df_label
     
     def load_src_img(self,path):
