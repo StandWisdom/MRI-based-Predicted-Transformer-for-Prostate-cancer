@@ -47,11 +47,11 @@ parser.add_argument('--RESUME', default=0)
 parser.add_argument('--EPOCHS', default=20000)
 parser.add_argument('--freeze_num', default=None)
 parser.add_argument('--gpu_list', default=[0])
-parser.add_argument('--BATCH_SIZE', default=4)
+parser.add_argument('--BATCH_SIZE', default=16)
 parser.add_argument('--dstDir', default='./checkpoint')
 # Model seting
 parser.add_argument('--NUM_CLASSES', default=6)
-parser.add_argument('--base_lr', default=0.001)
+parser.add_argument('--base_lr', default=0.0001)
 # Data
 args = parser.parse_args()
 
