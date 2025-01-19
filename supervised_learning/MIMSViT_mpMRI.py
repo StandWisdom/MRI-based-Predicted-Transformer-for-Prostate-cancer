@@ -51,7 +51,7 @@ parser.add_argument('--BATCH_SIZE', default=16)
 parser.add_argument('--dstDir', default='./checkpoint')
 # Model seting
 parser.add_argument('--NUM_CLASSES', default=6)
-parser.add_argument('--base_lr', default=0.0001)
+parser.add_argument('--base_lr', default=0.001)
 # Data
 args = parser.parse_args()
 
