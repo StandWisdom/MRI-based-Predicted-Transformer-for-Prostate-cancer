@@ -226,22 +226,6 @@ optimizer = torch.optim.Adam([
 
 # In[]
 # If you hold a checkpoint
-def optimizer_to(optim, device):
-    # move optimizer to device
-    for param in optim.state.values():
-        # Not sure there are any global tensors in the state dict
-        if isinstance(param, torch.Tensor):
-            param.data = param.data.to(device)
-            if param._grad is not None:
-                param._grad.data = param._grad.data.to(device)
-        elif isinstance(param, dict):
-            for subparam in param.values():
-                if isinstance(subparam, torch.Tensor):
-                    subparam.data = subparam.data.to(device)
-                    if subparam._grad is not None:
-                        subparam._grad.data = subparam._grad.data.to(device)
-
-
 if isinstance(args.RESUME,str):
     path_checkpoint = args.RESUME  # 断点路径
     checkpoint = torch.load(path_checkpoint)  # 加载断点
