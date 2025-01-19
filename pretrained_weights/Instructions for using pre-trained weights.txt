@@ -1,0 +1,9 @@
+Dimension of input: (N, 3, 200, 200). The  N denotes the number of images of an MRI.
+Applicable to:
+t2_extractor.pth
+adc_extractor.pth
+dwi_extractor.pth
+
+Dimension of input: (c, (z1*w), (z2*h)).  w=h=patch size. The c denotes channels of encoding features.
+Applicable to:
+vit_fusion.pth
