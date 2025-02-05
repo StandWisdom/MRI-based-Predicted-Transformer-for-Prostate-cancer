@@ -1,5 +1,5 @@
 # MRI-based-Predicted-Transformer-for-Prostate-cancer (MRI-PTPCa)
-An MRI-pathology model (MRI-based Predicted Transformer for Prostate cancer (MRI-PTPCa)) was proposed to discover correlations between mp-MRI and tumor regressiveness of PCa and was further deployed for diagnosing non-PCa, PCa, non-CSPCa, CSPCa, and grading of GGG.
+An MRI-pathology model (MRI-based Predicted Transformer for Prostate cancer (MRI-PTPCa)) was proposed to discover correlations between mp-MRI and tumor regressiveness of PCa and was further deployed for diagnosing non-PCa, PCa, non-CSPCa, CSPCa, and grading of GGG (Grade group of Gleason score).
 
 The goal of this repository is:
 - to help researchers to reproduce the MRI-PTPCa  and expand for other prostate research or relevant research.
